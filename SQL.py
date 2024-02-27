@@ -33,7 +33,7 @@ if database_exists:
         print("Database deleted successfully")
     else:
         if continue_ == 'n':
-            print("Database not deleted")
+            print("Ok")
         else:
             print("Invalid input")
 else:
