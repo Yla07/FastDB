@@ -1,5 +1,6 @@
 import tkinter as tk
 import mysql.connector
+import table
 
  # Connecting to a server
 mydb = mysql.connector.connect(
@@ -7,7 +8,7 @@ mydb = mysql.connector.connect(
         user="root",
         password=""
     )
-
+root = tk.Tk()  
 def create_db():
     global database_name_Entry, nubmer_of_tables_Entry
 
@@ -29,16 +30,9 @@ def create_db():
         
         mycursor.execute("CREATE DATABASE " + database_name)
         print("Database created successfully")
-        root = tk.Tk()
-        root.title("FastDB(Table Creator)") 
-        for i in range(number_of_tables):
-            table_name_label = tk.Label(root, text="Table Name ", font=("Arial", 15))
-            table_name_label.grid(column=0, row=i+1)
-            table_name_entry = tk.Entry(root, width=30)
-            table_name_entry.grid(column=1, row=i+1)
-        root.mainloop()
-
-root = tk.Tk()
+        # Creating tables
+        table
+       
 root.title("FastDB(Creating_DataBase)")
 
 database_name_label = tk.Label(root, text="Database Name ", font=("Arial", 15))
@@ -56,7 +50,8 @@ nubmer_of_tables_Entry.grid(column=1, row=2)
 continue_button = tk.Button(root, text="Continue", padx=10, pady=5, fg="white", bg="black", command=create_db)
 continue_button.grid(column=1, row=3)
 
-
+number_of_tables = int(nubmer_of_tables_Entry.get())
+database_name = database_name_Entry.get()
 
 
 
