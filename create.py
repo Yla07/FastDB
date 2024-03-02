@@ -1,6 +1,6 @@
 import tkinter as tk
 import mysql.connector
-import table
+from . import table as t
 
  # Connecting to a server
 mydb = mysql.connector.connect(
@@ -31,7 +31,7 @@ def create_db():
         mycursor.execute("CREATE DATABASE " + database_name)
         print("Database created successfully")
         # Creating tables
-        table
+        t
        
 root.title("FastDB(Creating_DataBase)")
 

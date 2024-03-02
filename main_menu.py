@@ -1,5 +1,5 @@
 import tkinter as tk
-from Create import create as c
+from . import create as c
 
 
 root = tk.Tk()
